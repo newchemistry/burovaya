@@ -1,0 +1,35 @@
+@mixin  p-absolute($x,$y)
+  position: absolute
+  @if $x == left
+    left: 0
+    @if $y == top
+      top: 0
+    @else if $y == center
+      top: 50%
+      transform: translate(0,-50%)
+    @else if $y == bottom
+      bottom: 0
+
+  @else if $x == center
+    left: 50%
+
+    @if $y == top
+      top: 0
+      transform: translate(-50%,0)
+    @else if $y == center
+      top: 50%
+      transform: translate(-50%,-50%)
+    @else if $y == bottom
+      bottom: 0
+      transform: translate(-50%,0)
+
+
+  @else if $x == right
+    right: 0
+    @if $y == top
+      top: 0
+    @else if $y == center
+      top: 50%
+      transform: translate(0,-50%)
+    @else if $y == bottom
+      bottom: 0

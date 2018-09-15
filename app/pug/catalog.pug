@@ -1,0 +1,20 @@
+
+-
+  var $pages = [
+  {value: 'ASIC-BTC', name: 'ASIC BTC Miner'},
+  {value: 'ASIC-LTC', name: 'ASIC LTC Miner'},
+  {value: 'ASIC-other', name: 'ASIC miner прочие'},
+  {value: 'GPU-Altcoin', name: 'GPU ETH/ETC/ZEC Altcoin miner'},
+  {value: 'parts', name: 'Комплектующие'},
+  ]
+
+.wrapper
+  .scroller
+    ul.scroll-container
+      each $val in $pages
+        li
+          a.catLink(data-link=$val.value)=$val.name
+            img(src='img/hardware/'+$val.value+'.png')
+            SPAN
+
+    .scroller__bar.scroller__bar_state_on

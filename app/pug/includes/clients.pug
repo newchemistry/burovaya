@@ -1,0 +1,8 @@
+section.section#clients.w-bg
+  .container
+    .col-lg-10.mx-auto
+      h2= 'Нам доверяют'
+      p.text-justify= 'Приоритетным для нас является долгосрочное сотрудничество на постоянной основе. С нами работают как уже извесные широкой публике дизайнеры модной одежды, так и молодые перспективные бренды.'
+    .logo-clients.text-center
+      each $val in $clients
+        img(src='img/clients/'+$val+'.png')

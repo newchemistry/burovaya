@@ -1,0 +1,159 @@
+.video_bg
+  position: absolute
+  bottom: 0
+  right: 0
+  z-index: -1000
+  min-width: 100vw
+  min-height: 100vh
+  width: auto
+  height: auto
+
+.cover
+  +p-absolute(center,center)
+  background: radial-gradient(80% 80%, rgba(46, 158, 122, 0.2), rgba(9, 15, 16, 1))
+  z-index: 0
+  width: 100vw
+  height: 100vh
+
+
+.glass
+  position: absolute
+  top: 0
+  right: 0
+  overflow: hidden
+  background:  rgba(129, 64, 169, 0.2)
+  border-radius: 10px 0 0 10px
+  box-shadow: -3px 0 4px rgba(0, 0, 0, 0.6)
+  max-width: 100%
+  @include media-breakpoint-up(lg)
+    max-width: 920px
+    min-width: 50%
+  video
+    filter: blur(10px)
+  .content
+    +p-absolute(center, center)
+    width: 100%
+    padding-right: 60px
+    padding-left: 60px
+
+.wrapper
+  position: relative
+  overflow: hidden
+  height: 100%
+
+.scroller
+  height: 100%
+  overflow-y: scroll
+  &::-webkit-scrollbar
+    /* Preventing webkit bug of horizontal scrolling
+    width: 0
+
+.scroller__bar
+  width: 10px
+  background: #999
+  position: absolute
+  z-index: 1
+  right: 4px
+  display: none
+  width: 8px
+  min-height: 50px
+  border-radius: 3px
+  background: #987
+  opacity: .6
+  -webkit-transition: width .2s linear
+  -moz-transition: width .2s linear
+  -o-transition: width .2s linear
+  transition: width .2s linear
+  &:hover
+    opacity: .8
+
+.scroller__bar_state_on
+  display: block
+
+.scroll-container
+  overflow: hidden
+  padding: 100px 0
+.name
+  padding-left: 70px
+  position: relative
+  svg
+    width: 100px
+    height: 100px
+    position: absolute
+    top: 50%
+    left: 0
+    transform:  scale(.8, .8) translate(0,-50%)
+    fill: $white
+  span
+    font-size: 62px
+    letter-spacing: 4px
+    text-transform: uppercase
+    font-family: Montserrat
+    font-weight: 100
+    @include media-breakpoint-down(md)
+
+
+      font-size: 36px
+  h1
+    font-size: 18px
+    text-transform: lowercase
+    color: $white
+    padding: 0
+    text-align: left
+    @include media-breakpoint-down(md)
+      font-size: 14px
+.slogan
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,100%)
+  opacity: 0
+  text-transform: uppercase
+  letter-spacing: 1.8px
+  display: block
+  transition: .8s
+  font-family: 'Gotham Pro'
+  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5)
+  font-size: 18px
+  line-height: 2
+
+.button
+  position: absolute
+  top: 40px
+  left: 5%
+  padding: 10px 40px
+  font-size: 13px
+  text-transform: uppercase
+  -webkit-border-radius: 40px
+  border-radius: 40px
+  border: none
+  background-color: #c3633e
+  color: #f1f1f1
+  letter-spacing: 0.5px
+    z-index: 1001
+  &:focus
+    outline: none
+.lang
+  position: absolute
+  top: 50%
+  left: 0
+  transform: translateY(-50%)
+
+  a
+    display: block
+    padding: 10px
+    &.active
+      color: $white
+      border-left: 2px $white solid
+
+.socLinks
+  position: absolute
+  bottom: 40px
+  left: 5%
+
+  a
+    padding: 0 20px
+
+  svg
+    fill: $white
+    transform: scale(.7,.7)

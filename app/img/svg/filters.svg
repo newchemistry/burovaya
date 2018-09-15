@@ -1,0 +1,15 @@
+<svg class="hide">
+  <defs>
+    <filter id="shadow" filterUnits="userSpaceOnUse" x="0" y="0"
+    width="300" height="300">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+    <feOffset in="blur" dx="1" dy="1" result="offsetBlr" />
+    <feFlood flood-color="3px 3px 7px rgba(0, 0, 0, 0.5)"/>
+    <feComposite operator="in" in2="offsetBlr" result="colBlur"/>
+    <feMerge>
+      <feMergeNode in="colBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+    </filter>
+  </defs>
+</svg>

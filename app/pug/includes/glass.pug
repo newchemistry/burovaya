@@ -1,0 +1,21 @@
+.glass.h-100
+  .cover
+  video.video_bg(autoplay="autoplay" loop="loop")
+    source(src="video/background_xl.mp4" type="video/mp4")
+  .inside.h-100.position-relative
+
+    include includes/navBar
+
+    .name
+      span= 'Буровая'
+      h1= 'Майнинг-сервис'
+
+    include includes/footer
+
+    nav.navBar#navBar
+      .circle 
+      .navBarCollapse
+        ul.d-lg-flex.justify-content-end
+          each $val in $pages
+            li
+              a.navLink(href='#'+$val.value)=$val.name

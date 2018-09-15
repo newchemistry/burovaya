@@ -1,0 +1,200 @@
+.menu-trigger, .close-trigger
+  position: absolute
+  top: 32px
+  right: 20px
+  display: block
+  width: 42px
+  height: 42px
+  cursor: pointer
+  z-index: 333
+
+  &:hover
+    .menu-trigger-bar
+      &:before
+        width: 100%
+
+    .close-trigger-bar
+      &:before
+        width: 100%
+
+.close-trigger
+  z-index: 5
+  top: 42px
+
+.menu-trigger-bar
+  display: block
+  width: 100%
+  height: 2px
+  background-color: $white-100
+  margin-bottom: 6px
+  transform: rotate(-45deg)
+  position: relative
+
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    width: 0%
+    height: 100%
+    background-color: $black-20
+    transition: $slide
+
+
+  &.top
+    width: 50%
+
+  &.middle
+    &:before
+      left: auto
+      right: 0
+
+
+  &.bottom
+    width: 50%
+    margin-left: 50%
+
+
+
+.close-trigger-bar
+  display: block
+  width: 100%
+  height: 2px
+  background-color: $white-100
+  position: relative
+
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    width: 0%
+    height: 100%
+    background-color: $black-20
+    transition: $slide
+
+
+  &.left
+    transform: translateX(100px) translateY(-100px) rotate(-45deg)
+
+  &.right
+    transform: translateX(-100px) translateY(-100px) rotate(45deg)
+    top: -3px
+
+.menu-container
+  position: relative
+  width: 100%
+  @include media-breakpoint-down(md)
+    position: absolute
+    height: 100%
+    left: 0
+    top: 0
+
+
+.navBar
+  position: absolute
+  top: 0
+  right: 30px
+  z-index: 1000
+  @include media-breakpoint-down(md)
+    z-index: 20
+    height: 100%
+    width: 100%
+    left: 0
+
+
+  @include media-breakpoint-up(lg)
+      padding: 20px 0
+
+.menu-container
+  display: flex
+  align-items: center
+
+
+
+
+.menu
+  width: 100%
+  &.mobile
+    display: block
+    padding: 20%
+    //opacity: 0
+    //visibility: hidden
+
+    li
+      text-align: left
+      display: block
+      padding: 15px 0
+
+
+    a
+      text-decoration: none
+      display: inline-block
+      padding: 10px 0
+      position: relative
+
+      &:hover
+        &:before
+          opacity: 1
+          transform: translateX(0px)
+
+
+
+      &:before
+        content: ""
+        display: block
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 18px
+        height: 4px
+        opacity: 0
+        background-color: $white
+        transform: translateX(100px)
+        transition: $slide
+
+
+
+.memu-bg-container
+  opacity: .3
+.menu-bg
+  position: absolute
+  display: block
+  width: 200%
+  left: -53%
+  top: -25%
+  //top: -25%
+  height: 40%
+  background-color: $white-100
+
+  &.middle
+    top: 29%
+    left: -53%
+    transform: rotate(-45deg) scaleY(0)
+
+  &.top
+    left: -34%
+    top: 0
+    transform: rotate(-45deg) translateY(-152%)
+    //top: -25%
+
+  &.bottom
+    //bottom: 0
+    top: 105%
+    transform: rotate(-45deg) translateY(25%)
+    left: -20%
+
+.navLink
+  color: $white
+  font-size: 16px
+  letter-spacing: .5px
+  font-weight: 300
+  font-family: 'Gotham Pro'
+  padding: 0 10px
+  li:nth-child(1) &
+    padding-left: 0
+
+  li:nth-last-child(1) &
+    padding-right: 0

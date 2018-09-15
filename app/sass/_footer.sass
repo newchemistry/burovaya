@@ -1,0 +1,25 @@
+.footer
+  position: absolute
+  bottom: 0
+  right: 30px
+  padding: 10px 0
+  @include media-breakpoint-down(lg)
+    right: 20px
+
+  .socLink
+    display: block
+    padding: 0 15px
+    svg
+      transform: scale(.8,.8)
+
+  .info
+    li
+      padding-left: 50px
+      p, a
+        line-height: 1.7
+        letter-spacing: .5px
+        display: block
+        font-size: 12px
+        color: $grey
+        &:hover
+          color: $white

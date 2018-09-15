@@ -1,0 +1,43 @@
+section.section#services.w-bg.pb-0
+  .container
+    .col-lg-10.mx-auto
+      h2=  'Что мы делаем?'
+
+    -
+      var $services  = [
+        {
+          title: 'Пошив дизайнерской одежды', 
+          description: 'Cложныe конструкции из сложных тканей', 
+          text: 'Предлагаем качественный и быстрый пошив дизайнерских коллекций одежды любой сложности! Мы осуществим раскрой и пошив от 10 единиц каждой модели.', 
+          img: 'designer-clothes.jpg'
+        },{
+          title: 'Пошив верхней одежды', 
+          description: 'Работаем с любым материалом', 
+          text: 'В наших силах работать с пальтовой тканью, кожей и любым другим материалом использующимся при пошиве верхней одежды.', 
+          img: 'outerwear.jpg'
+        },{
+          title: 'Вышивка', 
+          description: 'Все виды', 
+          text: 'Занимаемся машинной вышевкой любой сложности,а также разработкой программ(дизайна) для вышивальных машин по эскизам заказчика.', 
+          img: 'machine-embroidery.jpg'
+        },{
+          title: 'Разработка лекал', 
+          description: 'По эскизам, фотографиям, прототипам', 
+          text: 'Если Вы не знаете некоторых технических характеристик, или не уверенны в контрольных измерениях – не переживайте.', 
+          img: 'pattern.jpg'
+        },{
+          title: 'Работа с фурнитурой', 
+          description: 'Все до мелочей',
+          text: 'Обтяжка плоских пуговиц и пуговиц на ножке тканью, кожей. Установка метало-фурнитуры (кнопки, люверсы).', 
+          img: 'buttons.jpg'
+        }
+      ]
+
+    each $val, $i in $services
+      .row.service.wow(class=$i % 2 == 0 ? 'flex-row fadeInLeft' : 'flex-row-reverse fadeInRight')
+        .col-12.col-md-4.p-0.service-item.service-item-img
+          img.fullheight(src='img/services/'+$val.img)
+        .col-12.col-md-8.col-lg-7.service-item.service-item-txt
+          h3= $val.title
+          span= $val.description
+          p= $val.text

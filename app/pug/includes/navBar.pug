@@ -1,0 +1,18 @@
+span.menu-trigger.d-lg-none
+  i.menu-trigger-bar.top
+  i.menu-trigger-bar.middle
+  i.menu-trigger-bar.bottom
+span.close-trigger.d-lg-none
+  i.close-trigger-bar.left
+  i.close-trigger-bar.right
+
+nav#navBar.navBar
+  .memu-bg-container
+    i.menu-bg.top.d-lg-none
+    i.menu-bg.middle.d-lg-none
+    i.menu-bg.bottom.d-lg-none
+  .menu-container
+    ul#menu.menu.d-lg-flex.justify-content-end
+      each $val in $pages
+        li
+          a.navLink(data-link=$val.value)=$val.name

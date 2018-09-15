@@ -1,0 +1,44 @@
+include variables
+doctype html
+html(lang='ru-RU') 
+  include includes/head 
+
+  body
+    video.video_bg(loop autoplay muted)
+      source(src="video/background_xl.mp4" type="video/mp4")
+      source(src="video/background_xl.webm" type="video/webm")
+    .cover
+    #glass.glass.h-100
+      video.video_bg(loop autoplay muted)
+        source(src="video/background_xl.mp4" type="video/mp4")
+        source(src="video/background_xl.webm" type="video/webm")
+      .cover
+
+
+      include includes/navBar
+
+      .content
+        .name
+          include /img/svg/drill.svg
+
+          span= 'Буровая'
+          h1= 'Майнинг-сервис'
+
+      include includes/footer
+
+
+
+    button.button= 'Оставить заявку'
+    ul.lang
+      li
+        a.active(href='/')= 'РУ'
+      li
+        a(href='/en')= 'EN'
+
+    ul.socLinks.d-flex
+      each $val in $socLinks
+        li
+          a.socLink(href=$val.href target="_blank")
+            !=  '@@include("img/svg/'+$val.icon+'.svg")'
+    script(src="js/libs.min.js")
+    script(src="js/main.js")
